@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeruStar.API", "PeruStar.API\PeruStar.API.csproj", "{DB7F15B6-8387-405D-A21F-E28B1FBE0329}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB7F15B6-8387-405D-A21F-E28B1FBE0329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB7F15B6-8387-405D-A21F-E28B1FBE0329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB7F15B6-8387-405D-A21F-E28B1FBE0329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB7F15B6-8387-405D-A21F-E28B1FBE0329}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
