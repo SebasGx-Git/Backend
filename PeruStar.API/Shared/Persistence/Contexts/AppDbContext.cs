@@ -19,6 +19,7 @@ public class AppDbContext: DbContext
     public DbSet<Event> Events { get; set; } = null!;
     public DbSet<FavoriteArtwork> FavoriteArtworks { get; set; } = null!;
     public DbSet<User> Users { get; set; } = null!;
+    public DbSet<Specialty> Specialties { get; set; } = null!;
 
     // Structure of the database
     protected override void OnModelCreating(ModelBuilder builder)
@@ -52,7 +53,12 @@ public class AppDbContext: DbContext
             .HasMany(p => p.Events)
             .WithOne(p => p.Artist)
             .HasForeignKey(p => p.ArtistId);
-        
+
+        builder.Entity<Artist>()
+            .HasOne(p => p.SpecialtyArt)
+            .WithMany(p => p.Artists)
+            .HasForeignKey(p => p.SpecialtyId);
+
         // Artwork entity
         builder.Entity<Artwork>().ToTable("Artworks");
         builder.Entity<Artwork>().HasKey(p => p.ArtworkId);
@@ -141,6 +147,15 @@ public class AppDbContext: DbContext
         builder.Entity<User>().Property(u => u.Username).IsRequired();
         builder.Entity<User>().Property(u => u.Email).IsRequired();
         builder.Entity<User>().Property(u => u.PasswordHash).IsRequired();
+
+        //Specialty Entity
+        builder.Entity<Specialty>().ToTable("Specialties");
+        builder.Entity<Specialty>().HasKey(s => s.SpecialtyId);
+        builder.Entity<Specialty>().Property(s => s.SpecialtyId).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Specialty>().Property(s => s.Name).IsRequired().HasMaxLength(50);
+
+        //Relationships
+        //Falta Interest
 
 
         builder.UseSnakeCaseNamingConvention();

@@ -16,5 +16,6 @@ public class ResourceToModelProfile: Profile
        CreateMap<SaveEventAssistanceResource, EventAssistance>();
        CreateMap<SaveFavoriteArtworkResource, FavoriteArtwork>();
        CreateMap<SavePersonResource, PersonResource>();
+       CreateMap<SaveSpecialtyResource, Specialty>();
     }
 }
