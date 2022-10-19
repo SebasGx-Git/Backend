@@ -83,6 +83,8 @@ builder.Services.AddScoped<IFavoriteArtworkRepository, FavoriteArtworkRepository
 builder.Services.AddScoped<IFavoriteArtworkService, FavoriteArtworkService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IHobbyistRepository, HobbyistRepository>();
+builder.Services.AddScoped<IHobbyistService, HobbyistService>();
 
 //Security injection configuration
 builder.Services.AddScoped<IJwtHandler, JwtHandler>();

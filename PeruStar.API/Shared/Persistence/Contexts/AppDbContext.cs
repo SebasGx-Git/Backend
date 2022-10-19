@@ -19,6 +19,7 @@ public class AppDbContext: DbContext
     public DbSet<Event> Events { get; set; } = null!;
     public DbSet<FavoriteArtwork> FavoriteArtworks { get; set; } = null!;
     public DbSet<User> Users { get; set; } = null!;
+    public DbSet<Hobbyist> Hobbyists { get; set; } = null!;
 
     // Structure of the database
     protected override void OnModelCreating(ModelBuilder builder)
@@ -67,15 +68,17 @@ public class AppDbContext: DbContext
         builder.Entity<FavoriteArtwork>().ToTable("FavoriteArtworks");
         builder.Entity<FavoriteArtwork>().HasKey(p => p.ArtworkId);
         builder.Entity<FavoriteArtwork>().Property(p => p.ArtworkId).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<FavoriteArtwork>().HasKey(p => p.HobbyistId);
+        builder.Entity<FavoriteArtwork>().Property(p => p.HobbyistId).IsRequired().ValueGeneratedOnAdd();
        // builder.Entity<FavoriteArtwork>().HasKey(pt => new { pt.HobyyistId, pt.ArtworkId });
 
         // Relationships
-        /*
+        
         builder.Entity<FavoriteArtwork>()
             .HasOne(pt => pt.Hobbyist)
             .WithMany(p => p.FavoriteArtworks)
-            .HasForeignKey(pt => pt.HobyyistId);
-        */
+            .HasForeignKey(pt => pt.HobbyistId);
+        
         builder.Entity<FavoriteArtwork>()
             .HasOne(pt => pt.Artwork)
             .WithMany(p => p.FavoriteArtworks)
@@ -141,7 +144,10 @@ public class AppDbContext: DbContext
         builder.Entity<User>().Property(u => u.Username).IsRequired();
         builder.Entity<User>().Property(u => u.Email).IsRequired();
         builder.Entity<User>().Property(u => u.PasswordHash).IsRequired();
+        
+        // Hobbyist entity
 
+        // Relationships
 
         builder.UseSnakeCaseNamingConvention();
         
