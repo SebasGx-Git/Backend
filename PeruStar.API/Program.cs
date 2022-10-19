@@ -81,6 +81,8 @@ builder.Services.AddScoped<IEventAssistanceRepository, EventAssistanceRepository
 builder.Services.AddScoped<IEventAssistanceService, EventAssistanceService>();
 builder.Services.AddScoped<IFavoriteArtworkRepository, FavoriteArtworkRepository>();
 builder.Services.AddScoped<IFavoriteArtworkService, FavoriteArtworkService>();
+builder.Services.AddScoped<ISpecialtyRepository, SpecialtyRepository>();
+builder.Services.AddScoped<ISpecialtyService, SpecialtyService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IHobbyistRepository, HobbyistRepository>();
