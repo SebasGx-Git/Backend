@@ -15,5 +15,6 @@ public class ModelToResourceProfile : Profile
         CreateMap<EventAssistance, EventAssistanceResource>();
         CreateMap<FavoriteArtwork, FavoriteArtworkResource>();
         CreateMap<Person, PersonResource>();
+        CreateMap<Follower, FollowerResource>();
     }
 }

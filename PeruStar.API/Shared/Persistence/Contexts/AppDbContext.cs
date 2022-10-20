@@ -19,11 +19,21 @@ public class AppDbContext: DbContext
     public DbSet<Event> Events { get; set; } = null!;
     public DbSet<FavoriteArtwork> FavoriteArtworks { get; set; } = null!;
     public DbSet<User> Users { get; set; } = null!;
+    public DbSet<Follower> Followers { get; set; } = null!;
 
     // Structure of the database
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        // Follower entity
+        builder.Entity<Follower>().ToTable("Followers");
+        builder.Entity<Follower>().Property(p => p.HobbyistId).IsRequired();
+        //builder.Entity<Follower>()
+        //    .HasMany(p => p.Hobbyist)
+        //    .WithOne(p => p.Follower)
+        //    .HasForeignKey(p => p.HobbyistId);
+
+
         //  Person entity
         builder.Entity<Person>().ToTable("Persons");
         builder.Entity<Person>().HasKey(p => p.Id);
