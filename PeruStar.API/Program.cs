@@ -17,7 +17,7 @@ using PeruStar.API.Shared.Persistence.Contexts;
 using PeruStar.API.Shared.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
-//Sebas estuvo aqui
+//Sebas estuvo aqui xdxdxdxd
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
