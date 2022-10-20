@@ -17,5 +17,7 @@ public class ModelToResourceProfile : Profile
         CreateMap<Person, PersonResource>();
         CreateMap<Specialty, SpecialtyResource>();
         CreateMap<Hobbyist, HobbyistResource>();
+        CreateMap<Follower, FollowerResource>();
+
     }
 }
