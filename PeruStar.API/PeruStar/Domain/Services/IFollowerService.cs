@@ -6,13 +6,13 @@ namespace PeruStar.API.PeruStar.Domain.Services
     public interface IFollowerService
     {
         Task<IEnumerable<Follower>> ListAsync();
-        Task<IEnumerable<Follower>> ListByHobbyistIdAsync(long Id); 
+        Task<IEnumerable<Follower>> ListByHobbyistIdAsync(long id); 
 
-        Task<IEnumerable<Follower>> ListByArtistIdAsync(long Id);
+        Task<IEnumerable<Follower>> ListByArtistIdAsync(long id);
 
-        Task<int> CountFollowers(long ArtistId);
+        Task<int> CountFollowers(long artistId);
 
-        Task<FollowerResponse> AssignFollowerAsync(long HobbyistId, long ArtistId);
-        Task<FollowerResponse> UnassignFollowerAsync(long HobbyistId, long ArtistId);
+        Task<FollowerResponse> AssignFollowerAsync(long hobbyistId, long artistId);
+        Task<FollowerResponse> UnassignFollowerAsync(long hobbyistId, long artistId);
     }
 }

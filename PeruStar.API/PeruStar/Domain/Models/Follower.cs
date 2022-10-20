@@ -6,4 +6,5 @@ public class Follower
     public long HobbyistId { get; set; }
     public Artist? Artist { get; set; }
     public long ArtistId { get; set; }
+    public long FollowerId { get; set; }
 }

@@ -32,10 +32,10 @@ public class AppDbContext: DbContext
         // Follower entity
         builder.Entity<Follower>().ToTable("Followers");
         builder.Entity<Follower>().Property(p => p.HobbyistId).IsRequired();
-        //builder.Entity<Follower>()
-        //    .HasMany(p => p.Hobbyist)
-        //    .WithOne(p => p.Follower)
-        //    .HasForeignKey(p => p.HobbyistId);
+        builder.Entity<Follower>()
+          .HasMany(p => p.Hobbyist)
+          .WithOne(p => p.Follower)
+          .HasForeignKey(p => p.HobbyistId);
 
 
         //  Person entity
